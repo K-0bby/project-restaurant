@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
-import { Mail, Bell, Flag, ArrowRight } from 'lucide-react';
+import { Mail, Bell, Flag, ArrowRight, User } from 'lucide-react';
 import DrinksInterface from '@/components/DrinksInterface';
 import { Link } from 'react-router-dom';
+import SalesComponent from '@/components/SalesInfo';
 
 const App = () => {
   // States for form inputs and sales type
@@ -41,6 +42,9 @@ const App = () => {
             </button>
             <button className="text-black">
               <Flag className="w-5 h-5" />
+            </button>
+            <button className="text-black">
+              <User className="w-5 h-5" />
             </button>
           </div>
 
@@ -82,16 +86,15 @@ const App = () => {
           </div>
 
           {/* Grid Layout for Drinks Interface and Wholesale Info */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
-            <div className="mt-3">
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <div className="col-span-2">
               <DrinksInterface />
             </div>
 
             {/* Wholesale Info and Sales Type Switcher */}
-            <div className="mt-6">
-              {/* Wholesale Info Box */}
+            <div className="mt-3 w-full xl:w-[350px] flex flex-col justify-between rounded-lg px-4">
               <div className="bg-blue-500 text-white p-6 rounded-lg">
-                <h1 className="text-white/60 font-extrabold text-4xl mb-3">Wholesale</h1>
+                <h1 className="text-white/80 font-extrabold text-4xl mb-3">Wholesale</h1>
                 <p className="py-3">All prices are switched to wholesale.</p>
 
                 {/* Link to Retail Sales */}
@@ -102,30 +105,32 @@ const App = () => {
               </div>
 
               {/* Sales Type and Table Clear Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-between mt-8 space-y-4 sm:space-y-0">
+              <div className="mt-8 space-y-6">
                 {/* Sales Type Switcher */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center justify-between">
                   <span className="font-bold text-gray-700">Sales Type:</span>
-                  <button
-                    onClick={() => handleSalesTypeChange('Wholesale')}
-                    className={`px-3 py-1 rounded-md text-white transition-colors ${
-                      salesType === 'Wholesale' ? 'bg-blue-500' : 'bg-gray-300'
-                    }`}
-                  >
-                    Wholesale
-                  </button>
-                  <button
-                    onClick={() => handleSalesTypeChange('Retail')}
-                    className={`px-3 py-1 rounded-md text-white transition-colors ${
-                      salesType === 'Retail' ? 'bg-orange-500' : 'bg-gray-300'
-                    }`}
-                  >
-                    Retail
-                  </button>
+                  <div className="flex space-x-2">
+                    <button
+                      onClick={() => handleSalesTypeChange('Wholesale')}
+                      className={`px-3 py-1 rounded-md text-white transition-colors ${
+                        salesType === 'Wholesale' ? 'bg-blue-500' : 'bg-gray-300'
+                      }`}
+                    >
+                      Wholesale
+                    </button>
+                    <button
+                      onClick={() => handleSalesTypeChange('Retail')}
+                      className={`px-3 py-1 rounded-md text-white transition-colors ${
+                        salesType === 'Retail' ? 'bg-orange-500' : 'bg-gray-300'
+                      }`}
+                    >
+                      Retail
+                    </button>
+                  </div>
                 </div>
 
                 {/* Clear Tables Button */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center justify-between">
                   <span className="font-bold text-gray-700">Tables:</span>
                   <button
                     onClick={clearTables}
@@ -134,27 +139,30 @@ const App = () => {
                     Clear Tables
                   </button>
                 </div>
+
+                {/* Dropdown for Table Selection */}
+                <div>
+                  <select
+                    id="tables"
+                    value={selectedTable}
+                    onChange={(e) => setSelectedTable(e.target.value)}
+                    className="p-2 border border-gray-300 rounded-md w-full bg-white outline-none"
+                  >
+                    <option value="">Select Table</option>
+                    <option value="table1">Table 1</option>
+                    <option value="table2">Table 2</option>
+                    <option value="table3">Table 3</option>
+                    <option value="table4">Table 4</option>
+                  </select>
+                </div>
               </div>
 
-                  {/* New Dropdown Select for Tables */}
-              <div className="my-3">
-                {/* <label htmlFor="tables" className="block text-sm font-bold text-gray-700 mb-1">Select Table:</label> */}
-                <select
-                  id="tables"
-                  value={selectedTable}
-                  onChange={(e) => setSelectedTable(e.target.value)}
-                  className="p-2 border border-gray-300 rounded-md w-full bg-white outline-none"
-                >
-                  <option value="">Select Table</option>
-                  <option value="table1">Table 1</option>
-                  <option value="table2">Table 2</option>
-                  <option value="table3">Table 3</option>
-                  <option value="table4">Table 4</option>
-                </select>
+              {/* Sales Component Section */}
+              <div className="mt-6">
+                <SalesComponent />
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </main>

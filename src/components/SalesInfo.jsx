@@ -1,37 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ShoppingCart } from 'lucide-react';
 
-const SalesInfo = ({ discount, total, onDiscountChange }) => {
+const SalesComponent = () => {
+  const [discount, setDiscount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(100); 
+  
+  // Function to calculate the discounted price
+  const calculateDiscountedPrice = () => {
+    return (totalPrice - (totalPrice * discount) / 100).toFixed(2);
+  };
+
   return (
-    <div className="bg-white shadow-md p-4 mt-4">
-      <div className="flex justify-between items-center">
-        <div className="w-full mr-2">
-          <label className="block mb-2 text-sm font-bold">Discount:</label>
-          <input
-            type="number"
-            value={discount}
-            onChange={onDiscountChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md"
-            placeholder="Discount %"
-          />
-        </div>
-        <div className="text-right">
-          <p className="text-sm">Discount Price:</p>
-          <p className="text-2xl font-bold">GH₵ {discount > 0 ? (total * discount / 100).toFixed(2) : '0.00'}</p>
-        </div>
+    <div className="p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+      <h2 className="text-xl font-bold mb-4">Sales</h2>
+
+      {/* Discount Dropdown */}
+      <div className="flex items-center justify-between mb-4">
+        <label className="text-gray-700 font-semibold">Discount:</label>
+        <select
+          value={discount}
+          onChange={(e) => setDiscount(Number(e.target.value))}
+          className="p-2 border border-gray-300 rounded-md w-1/3 outline-none"
+        >
+          <option value="0">0%</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="15">15%</option>
+        </select>
       </div>
-      <div className="flex justify-between items-center mt-4">
-        <div className="text-center w-full">
-          <button className="bg-green-500 text-white px-8 py-4 rounded-md">
-            <i className="fa fa-shopping-cart mr-2"></i> Checkout
-          </button>
+
+      {/* Discount Price Display */}
+      <div className="flex items-center justify-between mb-6">
+        <span className="text-gray-700 font-semibold">Discount Price:</span>
+        <span className="font-bold text-lg">GH₵ {calculateDiscountedPrice()}</span>
+      </div>
+
+      {/* Cart and Total Price */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          <ShoppingCart className="w-10 h-10 text-green-500" />
         </div>
-        <div className="text-right">
-          <p className="text-sm">Total:</p>
-          <p className="text-4xl font-bold">GH₵ {total.toFixed(2)}</p>
-        </div>
+        <span className="font-extrabold text-2xl">GH₵ {totalPrice}</span>
       </div>
     </div>
   );
 };
 
-export default SalesInfo;
+export default SalesComponent;
