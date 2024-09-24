@@ -5,35 +5,47 @@ import DrinksInterface from '@/components/DrinksInterface';
 import { Link } from 'react-router-dom';
 
 const App = () => {
-  // State management for input fields
+  // States for form inputs and sales type
   const [barcode, setBarcode] = useState('');
   const [productCode, setProductCode] = useState('');
   const [productName, setProductName] = useState('');
+  const [salesType, setSalesType] = useState('Wholesale');
+
+  // Handler for sales type switch
+  const handleSalesTypeChange = (type) => {
+    setSalesType(type);
+  };
+
+  // Clear tables function
+  const clearTables = () => {
+    console.log("Tables cleared");
+    // Add additional logic to clear tables
+  };
 
   return (
-    <main className="max-w-screen-xl relative">
+    <main className="max-w-screen-xl mx-auto relative overflow-hidden">
       <div className="flex h-screen">
         {/* Sidebar */}
         <Sidebar />
 
-        {/* Header Icons */}
-        {/* <div className="flex space-x-6 absolute top-4 right-6 my-2 mx-2">
-          <button className="text-black">
-            <Mail className="w-4 h-4" />
-          </button>
-          <button className="text-black">
-            <Bell className="w-4 h-4" />
-          </button>
-          <button className="text-black">
-            <Flag className="w-4 h-4" />
-          </button>
-        </div> */}
-
         {/* Main Content */}
-        <div className="flex-1 py-16 px-5 overflow-y-scroll">
+        <div className="flex-1 py-6 px-4 sm:px-8 lg:px-10 overflow-y-scroll">
+          {/* Header with Mail, Notification, and Flag icons */}
+          <div className="flex justify-end space-x-6 mb-6">
+            <button className="text-black">
+              <Mail className="w-5 h-5" />
+            </button>
+            <button className="text-black">
+              <Bell className="w-5 h-5" />
+            </button>
+            <button className="text-black">
+              <Flag className="w-5 h-5" />
+            </button>
+          </div>
+
           {/* Product Input Fields */}
-          <div className="flex space-x-3">
-            <div className="w-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div>
               <label htmlFor="barcode" className="block text-sm font-bold text-gray-700 mb-1">Barcode:</label>
               <input
                 type="text"
@@ -41,11 +53,10 @@ const App = () => {
                 value={barcode}
                 onChange={(e) => setBarcode(e.target.value)}
                 placeholder="Enter Barcode"
-                className="p-1.5 border border-gray-300 rounded-sm w-full"
+                className="p-2 border border-gray-300 rounded-md w-full"
               />
             </div>
-
-            <div className="w-full">
+            <div>
               <label htmlFor="productCode" className="block text-sm font-bold text-gray-700 mb-1">Product Code:</label>
               <input
                 type="text"
@@ -53,11 +64,10 @@ const App = () => {
                 value={productCode}
                 onChange={(e) => setProductCode(e.target.value)}
                 placeholder="Enter Product Code"
-                className="p-1.5 border border-gray-300 rounded-sm w-full"
+                className="p-2 border border-gray-300 rounded-md w-full"
               />
             </div>
-
-            <div className="w-full">
+            <div>
               <label htmlFor="productName" className="block text-sm font-bold text-gray-700 mb-1">Product Name:</label>
               <input
                 type="text"
@@ -65,33 +75,64 @@ const App = () => {
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
                 placeholder="Enter Product Name"
-                className="p-1.5 border border-gray-300 rounded-sm w-full"
+                className="p-2 border border-gray-300 rounded-md w-full"
               />
             </div>
           </div>
 
-          {/* Grid Layout for DrinksInterface and Wholesale Section */}
-          <div className='grid grid-cols-1 xl:grid-cols-2 gap-10'>
-            {/* Drinks Interface */}
-            <div className="mt-6">
+          {/* Grid Layout for Drinks Interface and Wholesale Info */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+            <div className="mt-3">
               <DrinksInterface />
             </div>
 
-            {/* Wholesale Info */}
-            <div className='mt-9'>
-              <div className='bg-blue-500 text-white px-2 py-5 rounded-md'>
-                <h1 className='text-white/50 font-extrabold text-4xl'>Wholesale</h1>
-                <p className='py-3'>All prices are switched to wholesale</p>
+            {/* Wholesale Info and Sales Type Switcher */}
+            <div className="mt-6">
+              {/* Wholesale Info Box */}
+              <div className="bg-blue-500 text-white p-6 rounded-lg">
+                <h1 className="text-white/80 font-extrabold text-4xl mb-3">Wholesale</h1>
+                <p className="py-3">All prices are switched to wholesale.</p>
 
                 {/* Link to Retail Sales */}
-                <Link to="/">
-                  <div className='flex items-center justify-center bg-blue-700 py-2 rounded-md w-full'>
-                    <p className='flex items-center gap-2 text-center'>
-                      View retail sales 
-                      <ArrowRight className='w-4 h-4 border rounded-full bg-blue-300'/>
-                    </p>
-                  </div>
+                <Link to="/" className="block text-center bg-blue-700 py-2 rounded-md mt-4">
+                  View retail sales 
+                  <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </Link>
+              </div>
+
+              {/* Sales Type and Table Clear Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-between mt-8 space-y-4 sm:space-y-0">
+                {/* Sales Type Switcher */}
+                <div className="flex items-center space-x-2">
+                  <span className="font-bold text-gray-700">Sales Type:</span>
+                  <button
+                    onClick={() => handleSalesTypeChange('Wholesale')}
+                    className={`px-3 py-1 rounded-md text-white transition-colors ${
+                      salesType === 'Wholesale' ? 'bg-blue-500' : 'bg-gray-300'
+                    }`}
+                  >
+                    Wholesale
+                  </button>
+                  <button
+                    onClick={() => handleSalesTypeChange('Retail')}
+                    className={`px-3 py-1 rounded-md text-white transition-colors ${
+                      salesType === 'Retail' ? 'bg-orange-500' : 'bg-gray-300'
+                    }`}
+                  >
+                    Retail
+                  </button>
+                </div>
+
+                {/* Clear Tables Button */}
+                <div className="flex items-center space-x-2">
+                  <span className="font-bold text-gray-700">Tables:</span>
+                  <button
+                    onClick={clearTables}
+                    className="px-3 py-1 bg-red-500 text-white rounded-md"
+                  >
+                    Clear Tables
+                  </button>
+                </div>
               </div>
             </div>
           </div>
