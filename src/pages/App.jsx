@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Sidebar from '@/components/Sidebar';
 import { Mail, Bell, Flag, ArrowRight } from 'lucide-react';
 import DrinksInterface from '@/components/DrinksInterface';
 import { Link } from 'react-router-dom';
 
-
 const App = () => {
+  // State management for input fields
+  const [barcode, setBarcode] = useState('');
+  const [productCode, setProductCode] = useState('');
+  const [productName, setProductName] = useState('');
 
   return (
-    <main className="max-w-screen-xl  relative">
+    <main className="max-w-screen-xl relative">
       <div className="flex h-screen">
         {/* Sidebar */}
         <Sidebar />
@@ -27,8 +30,7 @@ const App = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 py-16 px-5">
-
+        <div className="flex-1 py-16 px-5 overflow-y-scroll">
           {/* Product Input Fields */}
           <div className="flex space-x-3">
             <div className="w-full">
@@ -68,20 +70,28 @@ const App = () => {
             </div>
           </div>
 
+          {/* Grid Layout for DrinksInterface and Wholesale Section */}
           <div className='grid grid-cols-2 gap-10'>
             {/* Drinks Interface */}
-            <div className="mt-6">
+            <div className="mt-6 col-span-1">
               <DrinksInterface />
             </div>
 
-            <div className='mt-9 '>
-              <div className='bg-blue-500 text-white px-2'>
+            {/* Wholesale Info */}
+            <div className='mt-9'>
+              <div className='bg-blue-500 text-white px-2 py-5 rounded-md'>
                 <h1 className='text-white/50 font-extrabold text-4xl'>Wholesale</h1>
                 <p className='py-3'>All prices are switched to wholesale</p>
 
-                <div className='flex items-center justify-center bg-blue-800 w-full'>
-                  <p className='flex items-center  gap-2 text-center'>View retail sales <ArrowRight className='w-4 h-4 border rounded-full bg-slate-400'/></p>
-                </div>
+                {/* Link to Retail Sales */}
+                <Link to="/retail-sales">
+                  <div className='flex items-center justify-center bg-blue-700 py-2 rounded-md w-full'>
+                    <p className='flex items-center gap-2 text-center'>
+                      View retail sales 
+                      <ArrowRight className='w-4 h-4 border rounded-full bg-blue-300'/>
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

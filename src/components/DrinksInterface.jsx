@@ -36,7 +36,7 @@ const DrinksInterface = () => {
   return (
     <div className="max-w-screen-7xl mx-auto mt-3 border-2">
       <Tabs value={selectedTab} onValueChange={handleTabChange}>
-        <div className="sticky top-0 bg-white z-10">
+        <div className="relative top-0 bg-white z-10">
           <TabsList className="flex justify-start space-x-4">
             <TabsTrigger value="Beer" className='rounded-sm'>Beer</TabsTrigger>
             <TabsTrigger value="Wine & Spirits">Wine & Spirits</TabsTrigger>
