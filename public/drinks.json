@@ -1,0 +1,192 @@
+[
+    {
+      "name": "CORONA EXTRA",
+      "qty": 10,
+      "price": "GH¢ 23.00",
+      "img": "https://i.pinimg.com/564x/e3/a2/ad/e3a2ad320625dc3dba3466b4240f5ce4.jpg",
+      "category": "Beer"
+    },
+    {
+      "name": "BUDWEISER BEER",
+      "qty": 12,
+      "price": "GH¢ 23.00",
+      "img": "https://i.pinimg.com/564x/23/db/ff/23dbff251681245b9dbbdd83a9753e3c.jpg",
+      "category": "Beer"
+    },
+    {
+      "name": "HEINEKEN",
+      "qty": 15,
+      "price": "GH¢ 25.00",
+      "img": "https://i.pinimg.com/564x/96/eb/4f/96eb4fca2cd991c6ae59d209b643008f.jpg",
+      "category": "Beer"
+    },
+    {
+      "name": "STELLA ARTOIS",
+      "qty": 8,
+      "price": "GH¢ 27.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Stella_Artois_logo.svg/1200px-Stella_Artois_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "GUINNESS",
+      "qty": 5,
+      "price": "GH¢ 30.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Guinness_logo.svg/1200px-Guinness_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "AMSTEL LIGHT",
+      "qty": 20,
+      "price": "GH¢ 22.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Amstel_Light_logo.svg/1200px-Amstel_Light_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "CARLSBERG",
+      "qty": 10,
+      "price": "GH¢ 24.00",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Carlsberg_logo.svg/1200px-Carlsberg_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "PILSNER URQUELL",
+      "qty": 7,
+      "price": "GH¢ 26.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/6/68/Pilsner_Urquell_logo.svg/1200px-Pilsner_Urquell_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "BLUE MOON",
+      "qty": 10,
+      "price": "GH¢ 28.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Blue_Moon_Brewery_logo.svg/1200px-Blue_Moon_Brewery_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "LEFFE BLOND",
+      "qty": 9,
+      "price": "GH¢ 29.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Leffe_Brugge_logo.svg/1200px-Leffe_Brugge_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "SAM ADAMS",
+      "qty": 11,
+      "price": "GH¢ 31.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/5/57/Sam_Adams_Logo.png/1200px-Sam_Adams_Logo.png",
+      "category": "Beer"
+    },
+    {
+      "name": "KONA BREWING CO.",
+      "qty": 6,
+      "price": "GH¢ 32.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Kona_Brewing_logo.svg/1200px-Kona_Brewing_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "TROEGS PERPETUAL IPA",
+      "qty": 5,
+      "price": "GH¢ 34.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Troegs_Brewery_logo.svg/1200px-Troegs_Brewery_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "RADLER",
+      "qty": 12,
+      "price": "GH¢ 25.00",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Radler_-_german_style.jpg/640px-Radler_-_german_style.jpg",
+      "category": "Beer"
+    },
+    {
+      "name": "MILLER LITE",
+      "qty": 14,
+      "price": "GH¢ 20.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Miller_Lite_Logo.svg/1200px-Miller_Lite_Logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "COORS LIGHT",
+      "qty": 9,
+      "price": "GH¢ 21.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Coors_Light_logo.svg/1200px-Coors_Light_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "SAPPORO",
+      "qty": 11,
+      "price": "GH¢ 29.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Sapporo_logo.svg/1200px-Sapporo_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "DOS EQUIS",
+      "qty": 10,
+      "price": "GH¢ 22.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Dos_Equis_logo.svg/1200px-Dos_Equis_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "FOSTER'S",
+      "qty": 8,
+      "price": "GH¢ 24.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Foster%27s_logo.svg/1200px-Foster%27s_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "NEWCASTLE BROWN ALE",
+      "qty": 6,
+      "price": "GH¢ 27.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Newcastle_Brown_Ale_logo.svg/1200px-Newcastle_Brown_Ale_logo.svg.png",
+      "category": "Beer"
+    },
+    {
+      "name": "JACK DANIEL'S",
+      "qty": 15,
+      "price": "GH¢ 120.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Jack_Daniel%27s_Whiskey.svg/1200px-Jack_Daniel%27s_Whiskey.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "ABSOLUT VODKA",
+      "qty": 10,
+      "price": "GH¢ 90.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Absolut_Vodka.svg/1200px-Absolut_Vodka.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "CROWN ROYAL",
+      "qty": 8,
+      "price": "GH¢ 110.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Crown_Royal_logo.svg/1200px-Crown_Royal_logo.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "MOET & CHANDON",
+      "qty": 5,
+      "price": "GH¢ 250.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Moet_%26_Chandon_logo.svg/1200px-Moet_%26_Chandon_logo.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "HENNESSY",
+      "qty": 7,
+      "price": "GH¢ 150.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Hennessy_logo.svg/1200px-Hennessy_logo.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "BOMBAY SAPPHIRE",
+      "qty": 6,
+      "price": "GH¢ 95.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Bombay_Sapphire_logo.svg/1200px-Bombay_Sapphire_logo.svg.png",
+      "category": "Wine & Spirits"
+    },
+    {
+      "name": "CAPTAIN MORGAN",
+      "qty": 9,
+      "price": "GH¢ 85.00",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Captain_Morgan_logo.svg/1200px-Captain_Morgan_logo.svg.png",
+      "category": "Wine & Spirits"
+    }
+  ]
+  
