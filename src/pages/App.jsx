@@ -17,7 +17,7 @@ const App = () => {
         <Sidebar />
 
         {/* Header Icons */}
-        <div className="flex space-x-6 absolute top-4 right-6 my-2 mx-2">
+        {/* <div className="flex space-x-6 absolute top-4 right-6 my-2 mx-2">
           <button className="text-black">
             <Mail className="w-4 h-4" />
           </button>
@@ -27,7 +27,7 @@ const App = () => {
           <button className="text-black">
             <Flag className="w-4 h-4" />
           </button>
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="flex-1 py-16 px-5 overflow-y-scroll">
@@ -71,9 +71,9 @@ const App = () => {
           </div>
 
           {/* Grid Layout for DrinksInterface and Wholesale Section */}
-          <div className='grid grid-cols-2 gap-10'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 gap-10'>
             {/* Drinks Interface */}
-            <div className="mt-6 col-span-1">
+            <div className="mt-6">
               <DrinksInterface />
             </div>
 
@@ -84,7 +84,7 @@ const App = () => {
                 <p className='py-3'>All prices are switched to wholesale</p>
 
                 {/* Link to Retail Sales */}
-                <Link to="/retail-sales">
+                <Link to="/">
                   <div className='flex items-center justify-center bg-blue-700 py-2 rounded-md w-full'>
                     <p className='flex items-center gap-2 text-center'>
                       View retail sales 

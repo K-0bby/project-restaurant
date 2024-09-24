@@ -54,7 +54,7 @@ const DrinksInterface = () => {
                   <img
                     src={drink.img}
                     alt={drink.name}
-                    className="w-24 h-24 rounded-full object-cover mb-2"
+                    className="w-28 h-24 rounded-full object-cover mb-2"
                   />
                   <p className="text-sm text-center">{drink.name}</p>
                   <p className="text-sm text-center text-gray-500">Qty: {drink.qty}</p>

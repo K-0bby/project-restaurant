@@ -10,6 +10,7 @@ import {
   Settings,
   ChevronLeft,
 } from "lucide-react"; 
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -30,12 +31,12 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         className={`${
-          open ? "w-64" : "w-20"
-        } bg-dark-purple min-h-screen p-5 pt-8 relative duration-300`}
+          open ? "w-56" : "w-20"
+        } bg-blue-600 min-h-screen p-5 pt-8 relative duration-300`}
       >
         {/* Toggle Button */}
         <div
-          className={`absolute cursor-pointer -right-3 top-9 w-7 h-7 border-2 border-dark-purple rounded-full flex items-center justify-center z-50 bg-white ${
+          className={`absolute cursor-pointer -right-3 top-9 w-7 h-7 border-2 border-blue-600 rounded-full flex items-center justify-center z-50 bg-white ${
             !open && "rotate-180"
           }`}
           onClick={() => setOpen(!open)}
@@ -75,13 +76,13 @@ const Sidebar = () => {
               <div>{Menu.icon}</div>
 
               {/* Title */}
-              <span
+              <Link
                 className={`${
                   !open && "hidden"
                 } origin-left duration-200`}
               >
                 {Menu.title}
-              </span>
+              </Link>
             </li>
           ))}
         </ul>
