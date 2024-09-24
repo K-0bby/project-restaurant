@@ -10,6 +10,7 @@ const App = () => {
   const [productCode, setProductCode] = useState('');
   const [productName, setProductName] = useState('');
   const [salesType, setSalesType] = useState('Wholesale');
+  const [selectedTable, setSelectedTable] = useState('');
 
   // Handler for sales type switch
   const handleSalesTypeChange = (type) => {
@@ -133,6 +134,23 @@ const App = () => {
                     Clear Tables
                   </button>
                 </div>
+              </div>
+
+                  {/* New Dropdown Select for Tables */}
+              <div className="my-3">
+                {/* <label htmlFor="tables" className="block text-sm font-bold text-gray-700 mb-1">Select Table:</label> */}
+                <select
+                  id="tables"
+                  value={selectedTable}
+                  onChange={(e) => setSelectedTable(e.target.value)}
+                  className="p-2 border border-gray-300 rounded-md w-full bg-white outline-none"
+                >
+                  <option value="">Select Table</option>
+                  <option value="table1">Table 1</option>
+                  <option value="table2">Table 2</option>
+                  <option value="table3">Table 3</option>
+                  <option value="table4">Table 4</option>
+                </select>
               </div>
             </div>
           </div>
