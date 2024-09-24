@@ -23,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <main className="max-w-screen-xl mx-auto relative overflow-hidden">
+    <main className="max-w-screen-7xl mx-auto relative overflow-hidden">
       <div className="flex h-screen">
         {/* Sidebar */}
         <Sidebar />
@@ -90,7 +90,7 @@ const App = () => {
             <div className="mt-6">
               {/* Wholesale Info Box */}
               <div className="bg-blue-500 text-white p-6 rounded-lg">
-                <h1 className="text-white/80 font-extrabold text-4xl mb-3">Wholesale</h1>
+                <h1 className="text-white/60 font-extrabold text-4xl mb-3">Wholesale</h1>
                 <p className="py-3">All prices are switched to wholesale.</p>
 
                 {/* Link to Retail Sales */}
