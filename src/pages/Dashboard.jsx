@@ -37,12 +37,12 @@ const Dashboard = () => {
             <TopCards />
 
             {/* Sales Overview and Market Share Charts */}
-            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded-lg shadow-md">
+            {/* <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded-lg shadow-md">
               <SalesOverview />
-            </div>
-            <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded-lg shadow-md">
+            </div> */}
+            {/* <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded-lg shadow-md">
               <MarketShare />
-            </div>
+            </div> */}
 
             {/* Product Grid */}
             {/* <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded-lg shadow-md">
@@ -50,9 +50,9 @@ const Dashboard = () => {
             </div> */}
 
             {/* Transaction Table */}
-            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded-lg shadow-md">
+            {/* <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded-lg shadow-md">
               <DataTable />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

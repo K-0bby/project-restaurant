@@ -1,11 +1,47 @@
 import React from 'react';
-import { BarChart2, DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
+import { BarChart2, CreditCard, BookOpen, PlusCircle, Users } from 'lucide-react';
 
 const cards = [
-  { title: 'Sales', value: 'GHS 1,240,000', icon: <BarChart2 /> },
-  { title: 'Revenue', value: 'GHS 3,450,000', icon: <DollarSign /> },
-  { title: 'Expenses', value: 'GHS 540,000', icon: <TrendingDown /> },
-  { title: 'Profit', value: 'GHS 2,910,000', icon: <TrendingUp /> },
+  { 
+    title: 'Daily Sales', 
+    value: 'GHS 30.00', 
+    icon: <BarChart2 />
+  },
+  { 
+    title: 'Daily Credit', 
+    value: 'GHS 30.00', 
+    icon: <CreditCard /> 
+  },
+  { 
+    title: 'Monthly Credit', 
+    value: 'GHS 41,851', 
+    icon: <BookOpen /> 
+  },
+  { 
+    title: 'Monthly Invoices', 
+    value: '721', 
+    icon: <BookOpen />
+  },
+  { 
+    title: 'Total Daily Cash Sales', 
+    value: 'GHS 80.00', 
+    icon: <PlusCircle />
+  },
+  { 
+    title: 'Monthly Cash Sales', 
+    value: 'GHS 80.00', 
+    icon: <Users /> 
+  },
+  { 
+    title: 'Daily Mobile Money Sales', 
+    value: 'GHS 0.00', 
+    icon: <CreditCard />
+  },
+  { 
+    title: 'Monthly Mobile Money Sales', 
+    value: 'GHS 0.00', 
+    icon: <CreditCard /> 
+  },
 ];
 
 const TopCards = () => (
@@ -13,7 +49,7 @@ const TopCards = () => (
     {cards.map((card, idx) => (
       <div
         key={idx}
-        className="p-4 bg-white shadow-lg rounded-lg flex items-center space-x-4"
+        className="p-4 bg-white shadow-md rounded-lg flex items-center space-x-4"
       >
         <div className="text-3xl text-gray-600">{card.icon}</div>
         <div>
