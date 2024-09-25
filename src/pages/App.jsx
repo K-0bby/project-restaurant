@@ -92,7 +92,7 @@ const App = () => {
             </div>
 
             {/* Wholesale Info and Sales Type Switcher */}
-            <div className="mt-3 w-full xl:w-[350px] flex flex-col justify-between rounded-lg px-4">
+            <div className="mt-3 w-full xl:w-[360px] flex flex-col justify-between rounded-lg pr-10 mx-auto">
               <div className="bg-blue-500 text-white p-6 rounded-lg">
                 <h1 className="text-white/80 font-extrabold text-4xl mb-3">Wholesale</h1>
                 <p className="py-3">All prices are switched to wholesale.</p>
