@@ -38,10 +38,10 @@ const Dashboard = () => {
             <TopCards />
 
             {/* Sales Overview and Market Share Charts */}
-            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded-lg shadow-sm">
+            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded border shadow-sm">
               <SalesOverview />
             </div>
-            <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded-lg shadow-md">
+            <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded border shadow-sm">
               <MarketShare />
             </div>
 

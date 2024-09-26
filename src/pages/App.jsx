@@ -58,7 +58,7 @@ const App = () => {
                 value={barcode}
                 onChange={(e) => setBarcode(e.target.value)}
                 placeholder="Enter Barcode"
-                className="p-2 border border-gray-300 rounded-md w-full"
+                className="p-2 border border-gray-300 rounded w-full"
               />
             </div>
             <div>
@@ -69,7 +69,7 @@ const App = () => {
                 value={productCode}
                 onChange={(e) => setProductCode(e.target.value)}
                 placeholder="Enter Product Code"
-                className="p-2 border border-gray-300 rounded-md w-full"
+                className="p-2 border border-gray-300 rounded w-full"
               />
             </div>
             <div>
@@ -80,7 +80,7 @@ const App = () => {
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
                 placeholder="Enter Product Name"
-                className="p-2 border border-gray-300 rounded-md w-full"
+                className="p-2 border border-gray-300 rounded w-full"
               />
             </div>
           </div>
@@ -92,13 +92,13 @@ const App = () => {
             </div>
 
             {/* Wholesale Info and Sales Type Switcher */}
-            <div className="mt-3 w-full xl:w-[360px] flex flex-col justify-between rounded-lg pr-10 mx-auto">
-              <div className="bg-blue-500 text-white p-6 rounded-lg">
+            <div className="mt-3 w-full xl:w-[360px] flex flex-col justify-between rounded pr-10 mx-auto">
+              <div className="bg-blue-500 text-white p-6 rounded">
                 <h1 className="text-white/80 font-extrabold text-4xl mb-3">Wholesale</h1>
                 <p className="py-3">All prices are switched to wholesale.</p>
 
                 {/* Link to Retail Sales */}
-                <Link to="/" className="block text-center bg-blue-700 py-2 rounded-md mt-4">
+                <Link to="/" className="block text-center bg-blue-700 py-2 rounded mt-4">
                   View retail sales 
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </Link>
@@ -112,7 +112,7 @@ const App = () => {
                   <div className="flex space-x-2">
                     <button
                       onClick={() => handleSalesTypeChange('Wholesale')}
-                      className={`px-3 py-1 rounded-md text-white transition-colors ${
+                      className={`px-3 py-1 rounded text-white transition-colors ${
                         salesType === 'Wholesale' ? 'bg-blue-500' : 'bg-gray-300'
                       }`}
                     >
@@ -120,7 +120,7 @@ const App = () => {
                     </button>
                     <button
                       onClick={() => handleSalesTypeChange('Retail')}
-                      className={`px-3 py-1 rounded-md text-white transition-colors ${
+                      className={`px-3 py-1 rounded text-white transition-colors ${
                         salesType === 'Retail' ? 'bg-orange-500' : 'bg-gray-300'
                       }`}
                     >
@@ -134,7 +134,7 @@ const App = () => {
                   <span className="font-bold text-gray-700">Tables:</span>
                   <button
                     onClick={clearTables}
-                    className="px-3 py-1 bg-red-500 text-white rounded-md"
+                    className="px-3 py-1 bg-red-500 text-white rounded"
                   >
                     Clear Tables
                   </button>
@@ -146,7 +146,7 @@ const App = () => {
                     id="tables"
                     value={selectedTable}
                     onChange={(e) => setSelectedTable(e.target.value)}
-                    className="p-2 border border-gray-300 rounded-md w-full bg-white outline-none"
+                    className="p-2 border border-gray-300 rounded w-full bg-white outline-none"
                   >
                     <option value="">Select Table</option>
                     <option value="table1">Table 1</option>

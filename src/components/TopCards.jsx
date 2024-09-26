@@ -45,11 +45,11 @@ const cards = [
 ];
 
 const TopCards = () => (
-  <div className="col-span-1 lg:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+  <div className="col-span-1 lg:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-4">
     {cards.map((card, idx) => (
       <div
         key={idx}
-        className="p-4 bg-white shadow-sm rounded-lg flex flex-col text-center items-center space-x-4"
+        className="px-3 py-2 bg-white shadow-sm rounded flex flex-col text-center items-center space-x-3 border"
       >
         <div className="text-3xl">{card.icon}</div>
         <div>

@@ -34,7 +34,7 @@ const DrinksInterface = () => {
   };
 
   return (
-    <div className="max-w-screen-7xl mx-auto mt-3 border-2">
+    <div className="max-w-screen-7xl mx-auto mt-3 border-2 rounded">
       <Tabs value={selectedTab} onValueChange={handleTabChange}>
         <div className="relative top-0 bg-white z-10">
           <TabsList className="flex justify-start space-x-4">
@@ -65,11 +65,11 @@ const DrinksInterface = () => {
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-end mt-5 space-x-2 px-3 pb-2">
+          <div className="flex justify-end mt-5 space-x-1 px-3 pb-2">
             {[...Array(Math.ceil(drinks.length / itemsPerPage)).keys()].map(page => (
               <button
                 key={page + 1}
-                className={`px-4 w-10 h-10 border ${currentPage === page + 1 ? 'bg-blue-500 text-white' : 'border-gray-300'}`}
+                className={`px-4 w-10 h-10 border rounded ${currentPage === page + 1 ? 'bg-blue-500 text-white' : 'border-gray-300'}`}
                 onClick={() => setCurrentPage(page + 1)}
               >
                 {page + 1}

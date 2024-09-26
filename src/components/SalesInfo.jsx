@@ -11,7 +11,7 @@ const SalesComponent = () => {
   };
 
   return (
-    <div className="p-4 bg-white border border-gray-200 rounded-md shadow-sm">
+    <div className="p-4 bg-white border border-gray-200 rounded shadow-sm">
       <h2 className="text-xl font-bold mb-4">Sales</h2>
 
       {/* Discount Dropdown */}
@@ -20,7 +20,7 @@ const SalesComponent = () => {
         <select
           value={discount}
           onChange={(e) => setDiscount(Number(e.target.value))}
-          className="p-2 border border-gray-300 rounded-md w-1/3 outline-none"
+          className="p-2 border border-gray-300 rounded w-1/3 outline-none"
         >
           <option value="0">0%</option>
           <option value="5">5%</option>

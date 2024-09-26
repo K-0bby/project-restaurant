@@ -68,7 +68,7 @@ const Sidebar = () => {
           {Menus.map((Menu, index) => (
             <li
               key={index}
-              className={`flex items-center gap-x-4 p-2 rounded-md cursor-pointer hover:bg-light-white text-gray-300 text-sm ${
+              className={`flex items-center gap-x-4 p-2 rounded cursor-pointer hover:bg-light-white text-gray-300 text-sm ${
                 Menu.gap ? "mt-9" : "mt-2"
               } ${index === 0 && "bg-light-white"}`}
             >
