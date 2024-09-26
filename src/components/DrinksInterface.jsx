@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
+import { List, Grid } from 'lucide-react'; // Assuming these icons are available
 
 const DrinksInterface = () => {
   const [selectedTab, setSelectedTab] = useState('Beer');
   const [currentPage, setCurrentPage] = useState(1);
   const [drinksData, setDrinksData] = useState([]);
+  const [viewType, setViewType] = useState('grid'); // 'grid' or 'list'
   const itemsPerPage = 15;
 
   useEffect(() => {
@@ -33,35 +35,80 @@ const DrinksInterface = () => {
     setCurrentPage(1);
   };
 
+  const handleToggleView = () => {
+    setViewType(prevType => (prevType === 'grid' ? 'list' : 'grid'));
+  };
+
   return (
     <div className="max-w-screen-7xl mx-auto mt-3 border-2 rounded">
       <Tabs value={selectedTab} onValueChange={handleTabChange}>
-        <div className="relative top-0 bg-white z-10">
-          <TabsList className="flex justify-start space-x-4">
+        <div className="flex justify-between items-center mb-2">
+          <TabsList className="flex justify-start space-x-4 flex-1">
             <TabsTrigger value="Beer" className='rounded-sm'>Beer</TabsTrigger>
             <TabsTrigger value="Wine & Spirits">Wine & Spirits</TabsTrigger>
             <TabsTrigger value="Tots">Tots</TabsTrigger>
             <TabsTrigger value="Soft Drinks">Soft Drinks</TabsTrigger>
             <TabsTrigger value="Other">Other</TabsTrigger>
           </TabsList>
+
+          {/* Toggle View Button with Labels */}
+          <div className="flex items-center">
+            <button onClick={handleToggleView} className="p-2 flex items-center">
+              {viewType === 'grid' ? <List size={24} /> : <Grid size={24} />}
+              <span className="ml-1 text-sm">{viewType === 'grid' ? 'List View' : 'Grid View'}</span>
+            </button>
+          </div>
         </div>
 
         <TabsContent value={selectedTab}>
           <div className="drink-container scrollbar overflow-x-auto max-h-[300px] overflow-y-auto">
-            <div className="grid grid-cols-4 gap-4">
-              {currentDrinks.map((drink, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <img
-                    src={drink.img}
-                    alt={drink.name}
-                    className="w-28 h-24 rounded-full object-cover mb-2"
-                  />
-                  <p className="text-sm text-center">{drink.name}</p>
-                  <p className="text-sm text-center text-gray-500">Qty: {drink.qty}</p>
-                  <p className="text-sm text-center text-gray-500">{drink.price}</p>
+            {currentDrinks.length === 0 ? (
+              <p className="text-center text-gray-500">No drinks available.</p>
+            ) : (
+              viewType === 'grid' ? (
+                <div className="grid grid-cols-4 gap-4">
+                  {currentDrinks.map((drink, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <img
+                        src={drink.img}
+                        alt={drink.name}
+                        className="w-28 h-24 rounded-full object-cover mb-2"
+                      />
+                      <p className="text-sm text-center">{drink.name}</p>
+                      <p className="text-sm text-center text-gray-500">Qty: {drink.qty}</p>
+                      <p className="text-sm text-center text-gray-500">{drink.price}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              ) : (
+                <table className="min-w-full border-collapse border border-gray-200">
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 px-4 py-2">Image</th>
+                      <th className="border border-gray-300 px-4 py-2">Name</th>
+                      <th className="border border-gray-300 px-4 py-2">Qty</th>
+                      <th className="border border-gray-300 px-4 py-2">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentDrinks.map((drink, index) => (
+                      <tr key={index} className="hover:bg-gray-100">
+                        <td className="border border-gray-300 px-4 py-2">
+                          <img
+                            src={drink.img}
+                            alt={drink.name}
+                            className="w-16 h-16 rounded-full object-cover"
+                          />
+                        </td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{drink.name}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center text-gray-500">{drink.qty}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center text-gray-500">{drink.price}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )
+            )}
           </div>
 
           {/* Pagination */}
