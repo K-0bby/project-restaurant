@@ -5,7 +5,7 @@ const cards = [
   { 
     title: 'Daily Sales', 
     value: 'GHS 30.00', 
-    icon: <BarChart2 />
+    icon: <BarChart2  />
   },
   { 
     title: 'Daily Credit', 
@@ -49,12 +49,12 @@ const TopCards = () => (
     {cards.map((card, idx) => (
       <div
         key={idx}
-        className="p-4 bg-white shadow-md rounded-lg flex items-center space-x-4"
+        className="p-4 bg-white shadow-sm rounded-lg flex flex-col text-center items-center space-x-4"
       >
-        <div className="text-3xl text-gray-600">{card.icon}</div>
+        <div className="text-3xl">{card.icon}</div>
         <div>
-          <h3 className="text-xl font-semibold">{card.title}</h3>
-          <p className="text-lg text-gray-600">{card.value}</p>
+          <h3 className="text-lg font-semibold">{card.title}</h3>
+          <p className="text-md text-gray-600">{card.value}</p>
         </div>
       </div>
     ))}
