@@ -6,6 +6,7 @@ import MarketShare from "@/components/charts/MarketShare";
 import ProductGrid from "@/components/ProductGrid";
 import DataTable from "@/components/DataTable";
 import Sidebar from "@/components/Sidebar";
+import BarChartComponent from "@/components/charts/BarChartComponent";
 
 
 const Dashboard = () => {
@@ -41,10 +42,12 @@ const Dashboard = () => {
             <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded border shadow-sm">
               <SalesOverview />
             </div>
+            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded border shadow-sm">
+              <BarChartComponent />
+            </div>
             <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded border shadow-sm">
               <MarketShare />
             </div>
-
             {/* Product Grid */}
             {/* <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded-lg shadow-md">
               <ProductGrid title="Top Products" />

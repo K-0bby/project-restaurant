@@ -55,7 +55,7 @@ const DrinksInterface = () => {
           <div className="flex items-center">
             <button onClick={handleToggleView} className="p-2 flex items-center">
               {viewType === 'grid' ? <List size={24} /> : <Grid size={24} />}
-              <span className="ml-1 text-sm">{viewType === 'grid' ? 'List View' : 'Grid View'}</span>
+              {/* <span className="ml-1 text-sm">{viewType === 'grid' ? 'List View' : 'Grid View'}</span> */}
             </button>
           </div>
         </div>
