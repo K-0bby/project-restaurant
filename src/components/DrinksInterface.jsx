@@ -10,6 +10,21 @@ const DrinksInterface = () => {
   const itemsPerPage = 15;
 
   useEffect(() => {
+    // Load view type and selected tab from local storage
+    const savedViewType = localStorage.getItem('viewType');
+    const savedTab = localStorage.getItem('selectedTab');
+
+    // Set view type from local storage if it exists
+    if (savedViewType) {
+      setViewType(savedViewType);
+    }
+
+    // Set selected tab from local storage if it exists
+    if (savedTab) {
+      setSelectedTab(savedTab);
+    }
+
+    // Fetch drinks data
     fetch('/drinks.json')
       .then((response) => response.json())
       .then((data) => {
@@ -22,8 +37,18 @@ const DrinksInterface = () => {
       .catch((error) => console.error('Error fetching drinks data:', error));
   }, []);
 
-  const drinks = Array.isArray(drinksData) 
-    ? drinksData.filter(drink => drink.category === selectedTab) 
+  useEffect(() => {
+    // Save view type to local storage whenever it changes
+    localStorage.setItem('viewType', viewType);
+  }, [viewType]);
+
+  useEffect(() => {
+    // Save selected tab to local storage whenever it changes
+    localStorage.setItem('selectedTab', selectedTab);
+  }, [selectedTab]);
+
+  const drinks = Array.isArray(drinksData)
+    ? drinksData.filter(drink => drink.category === selectedTab)
     : [];
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -32,7 +57,7 @@ const DrinksInterface = () => {
 
   const handleTabChange = (tab) => {
     setSelectedTab(tab);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset to first page on tab change
   };
 
   const handleToggleView = () => {
@@ -55,6 +80,7 @@ const DrinksInterface = () => {
           <div className="flex items-center">
             <button onClick={handleToggleView} className="p-2 flex items-center">
               {viewType === 'grid' ? <List size={24} /> : <Grid size={24} />}
+              {/* Optional: display view type label */}
               {/* <span className="ml-1 text-sm">{viewType === 'grid' ? 'List View' : 'Grid View'}</span> */}
             </button>
           </div>
