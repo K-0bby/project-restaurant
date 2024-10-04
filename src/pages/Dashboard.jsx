@@ -16,7 +16,7 @@ const Dashboard = () => {
         <Sidebar />
 
          {/* Main Content */}
-         <div className="flex-1 py-6 px-4 sm:px-8 lg:px-10 overflow-y-scroll">
+         <div className="flex-1 py-6 px-4 sm:px-8 lg:px-10 overflow-y-scroll bg-gray-100">
           {/* Header with Mail, Notification, and Flag icons */}
           <div className="flex justify-end space-x-6 mb-6">
             <button className="text-black">
@@ -39,7 +39,7 @@ const Dashboard = () => {
             <TopCards />
 
             {/* Sales Overview and Market Share Charts */}
-            <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded border shadow-sm">
+            <div className="col-span-1 lg:col-span-1 p-4 bg-white rounded border shadow-sm">
               <SalesOverview />
             </div>
             <div className="col-span-1 lg:col-span-2 p-4 bg-white rounded border shadow-sm">
