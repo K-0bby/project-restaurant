@@ -23,7 +23,7 @@ const DrinksInterface = () => {
     if (savedTab) {
       setSelectedTab(savedTab);
     }
-
+ 
     // Fetch drinks data
     fetch('/drinks.json')
       .then((response) => response.json())
