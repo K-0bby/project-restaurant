@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import { Mail, Bell, Flag, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Records = () => {
   // State to store records (dummy data for now)
