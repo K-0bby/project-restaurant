@@ -6,7 +6,7 @@ const DrinksInterface = () => {
   const [selectedTab, setSelectedTab] = useState('Beer');
   const [currentPage, setCurrentPage] = useState(1);
   const [drinksData, setDrinksData] = useState([]);
-  const [viewType, setViewType] = useState('grid'); // 'grid' or 'list'
+  const [viewType, setViewType] = useState(''); // 'grid' or 'list'
   const itemsPerPage = 15;
 
   useEffect(() => {
