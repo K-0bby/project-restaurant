@@ -5,6 +5,7 @@ import DrinksInterface from '@/components/DrinksInterface';
 import { Link } from 'react-router-dom';
 import SalesComponent from '@/components/SalesInfo';
 
+
 const App = () => {
   // States for form inputs and sales type
   const [barcode, setBarcode] = useState('');
