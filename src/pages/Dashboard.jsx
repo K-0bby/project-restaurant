@@ -13,8 +13,14 @@ const fetchInventoryData = async () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
-        { name: 'Chardonnay', available: true, stockCount: 15, stockValue: 300, barcode: '123456' },
-        { name: 'Merlot', available: true, stockCount: 25, stockValue: 625, barcode: '789101' },
+        { name: 'Chardonnay', available: true, stockCount: 15, stockValue: 300 },
+        { name: 'Merlot', available: true, stockCount: 25, stockValue: 625 },
+        { name: 'Heineken', available: false, stockCount: 0, stockValue: 0 },
+        { name: 'Budweiser', available: true, stockCount: 10, stockValue: 250 },
+        { name: 'Coca-Cola', available: true, stockCount: 50, stockValue: 500 },
+        { name: 'Pepsi', available: false, stockCount: 0, stockValue: 0 },
+        { name: 'Orange Juice', available: true, stockCount: 20, stockValue: 200 },
+        { name: 'Whiskey', available: true, stockCount: 5, stockValue: 1000 },
         // Add more drinks here if needed
       ]);
     }, 1000); // Simulate a delay of 1 second
